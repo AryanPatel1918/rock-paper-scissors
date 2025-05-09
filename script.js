@@ -12,16 +12,12 @@ let computerScore = 0
 
 const choices = ["rock", "paper", "scissors"]
 
-rockButton.addEventListener("click", () => {
-    play("rock")
-})
-
-paperButton.addEventListener("click", () => {
-    play("paper")
-})
-
-scissorsButton.addEventListener("click", () => {
-    play("scissors")
+const choiceButtons = document.querySelectorAll(".choice-button") // get the 3 buttons
+// create event listeners for each button
+choiceButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        play(button.id)
+    })
 })
 
 function generateComputerChoice() {
